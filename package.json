@@ -1,0 +1,46 @@
+{
+  "name": "@danmasta/rbac",
+  "version": "0.0.1",
+  "author": "Daniel Smith <dannmasta@gmail.com>",
+  "description": "RBAC utility for node apps",
+  "license": "MIT",
+  "keywords": [
+    "rbac",
+    "access control",
+    "roles",
+    "permissions",
+    "security",
+    "oidc",
+    "oauth"
+  ],
+  "main": "index.js",
+  "bin": {},
+  "files": [
+    "index.js",
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests",
+    "coverage": "./node_modules/.bin/nyc --reporter=lcov ./node_modules/.bin/mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danmasta/rbac.git"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.23.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0"
+  },
+  "engines": {
+    "npm": ">=3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
