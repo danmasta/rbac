@@ -3,7 +3,7 @@ Role based access control helper for node apps
 
 Features:
 * Easy to use
-* Define roles, permissions, and claims in a declaritive way
+* Define roles, permissions, and claims in a declarative way
 * Inherit permissions across roles
 * Map permission sets to user claims
 * Authorize permissions or roles against claims
@@ -12,7 +12,7 @@ Features:
 ## About
 I wanted a better way to handle authorization in node apps. There are plenty of tools to help with authencation (passport) via different identity providers (oauth, saml, etc), but after you authenticate how do you handle authorization of specific resources and routes based on those [identity claims](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1#whats-a-claim)? I've seen a lot of applications do some sort of manual checking of session state and user claims on a per-route basis and in non-uniform ways. That pattern is not very scalable or maintainable and it becomes very difficult to audit and verify as the complexity of the app grows.
 
-This package lets you declaritively define your permission sets with a very simple syntax. It supports heirarchical rules via permission inheritance and allows you to map those permissions to identity claims. It includes helper functions for express apps for authorizing against permissions and/or roles.
+This package lets you declaratively define your permission sets with a very simple syntax. It supports heirarchical rules via permission inheritance and allows you to map those permissions to identity claims. It includes helper functions for express apps for authorizing against permissions and/or roles.
 
 ## Usage
 Add rbac as a dependency for your app and install via npm
