@@ -1,6 +1,6 @@
 {
   "name": "@danmasta/rbac",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Daniel Smith <dannmasta@gmail.com>",
   "description": "RBAC utility for node apps",
   "license": "MIT",
