@@ -6,6 +6,7 @@
   "license": "MIT",
   "keywords": [
     "rbac",
+    "abac",
     "access control",
     "roles",
     "permissions",
