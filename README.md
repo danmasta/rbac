@@ -8,6 +8,7 @@ Features:
 * Map permission sets to user claims
 * Verify permissions or roles against claims
 * Includes helper middlewares for express apps
+* Supports [RBAC](https://developer.okta.com/books/api-security/authz/role-based/) and [ABAC](https://developer.okta.com/books/api-security/authz/attribute-based/) type flows
 
 ## About
 I wanted a better way to handle [authorization](https://www.okta.com/identity-101/authentication-vs-authorization/) in node apps. There are plenty of tools to help with authencation (passport) via different identity providers (oauth, saml, etc), but after you authenticate how do you handle authorization of specific resources and routes based on those [identity claims](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1#whats-a-claim)? I've seen a lot of applications do some sort of manual checking of session state and user claims on a per-route basis and in non-uniform ways. That pattern is not very scalable or maintainable and it becomes very difficult to audit and verify as the complexity of the app grows.
@@ -60,7 +61,7 @@ Name | Description
 `isAuthenticated(opts)` | Helper middleware for checking authentication state. Expects a `req.isAuthenticated` function to be set. Returns a function that accepts `(req, res, next)` objects
 `isAuthorized(permissions, opts)` | Helper middleware for verifying permissions. Returns a function that accepts `(req, res, next)` objects
 `isRole(roles, opts)` | Helper middleware for verifying roles. Returns a function that accepts `(req, res, next)` objects
-`express()` | Helper middleware for setting functions on the `req` object and `locals` for view templates. Returns a function that accepts `(req, res, next)` objects
+`express()` | Helper middleware for setting functions on the `req` object and `res.locals` object for view templates. Returns a function that accepts `(req, res, next)` objects
 
 ### Roles
 Roles can be configured using the following fields:
@@ -68,7 +69,7 @@ name | type | description
 -----|------|------------
 `id` | *`string`* | Id for the role. Default is `undefined`
 `description` | *`string`* | Description for the role. Default is `undefined`
-`permissions` | *`array\|object`* | Permissions for the role. Should be an array or strings: `[posts.get, posts.list]`, or an object of key/value pairs specifying `true`/`false` for each key: `{ 'posts.get': true, 'posts.list': false }`. Default is `undefined`
+`permissions` | *`array\|object`* | Permissions for the role. Should be an array or strings: `['posts.get', 'posts.list']`, or an object of key/value pairs specifying `true`/`false` for each key: `{ 'posts.get': true, 'posts.list': false }`. Default is `undefined`
 `inherit` | *`string\|array`* | Which role ids to inherit permissions from. Default is `undefined`
 `claims` | *`object`* | Key/value pairs of claim names and values: `{ groups: ['posts-editor', 'posts-viewer'] }`. Default is `undefined`
 
