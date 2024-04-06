@@ -9,7 +9,7 @@ Features:
 * Authorize roles and permission sets against user claims
 * Includes helper middlewares for express apps
 * Supports [RBAC](https://developer.okta.com/books/api-security/authz/role-based/) and [ABAC](https://developer.okta.com/books/api-security/authz/attribute-based/) type flows
-* [Wildcard](#wildcards) support for permissions
+* [Wildcard](#wildcards) support for permission definitions
 
 ## About
 I wanted a better way to handle [authorization](https://www.okta.com/identity-101/authentication-vs-authorization/) in node apps. There are plenty of tools to help with authentication from different identity providers such as passport, oauth, saml, oidc, etc. But after you authenticate how do you handle authorization of specific resources and routes based on those [identity claims](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1#whats-a-claim)? I've seen a lot of applications do some sort of manual checking of session state and user claims on a per-route basis and in non-uniform ways. That pattern tends to be pretty error-prone and not very scalable or maintainable as the application grows. It can also be difficult to audit, change, or verify over time.
@@ -84,7 +84,7 @@ String | Description
 `api.*.view` | Matches any permission at 1 depth that begins with `api` and ends with `view`. Matches `api.users.view`, but not `api.users` or `api.users.edit`
 
 ## Examples
-Define roles, look for claims on the `req.user` object, authorize against the `groups` claim
+Define roles, find claims on the `req.user` object, and authorize against the `groups` claim
 ```js
 const RBAC = require('@danmasta/rbac');
 
