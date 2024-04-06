@@ -1,7 +1,9 @@
-const chai = require('chai');
+const RBAC = require('../index');
 
-beforeEach(function () {
-    global.assert = chai.assert;
-    global.expect = chai.expect;
-    global.should = chai.should();
+beforeEach(() => {
+    return import('chai').then(chai => {
+        global.assert = chai.assert;
+        global.expect = chai.expect;
+        global.should = chai.should();
+    });
 });
