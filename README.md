@@ -44,7 +44,7 @@ name | type | description
 Name | Description
 -----|------------
 `authorizeByPermissions(claims, permissions, authorizeAgainst?)` | Verify permissions against a set of claims. Accepts a set of claims, list of permissions, and optional claim key filter to authorize against. If more than one permission is provided it will succeed only if all permissions are verified. Returns a `promise` that resolves with claims or rejects with an `AuthorizationError`
-`authorizeByRoles(claims, roles, authorizeByRoles?)` | Verify roles against a set of claims. Accepts a set of claims, list of roles, and optional claim key filter to authorize against. If more than one role is provided it will succeed if any role is verified. Returns a `promise` that resolves with claims or rejects with an `AuthorizationError`
+`authorizeByRoles(claims, roles, authorizeAgainst?)` | Verify roles against a set of claims. Accepts a set of claims, list of roles, and optional claim key filter to authorize against. If more than one role is provided it will succeed if any role is verified. Returns a `promise` that resolves with claims or rejects with an `AuthorizationError`
 `isAuthorized(permissions, opts?)` | Helper middleware for verifying permissions on routes. Accepts an optional options object of `{ permissions, authorizeAgainst, redirect }`. Returns a middleware `function`
 `isRole(roles, opts?)` | Helper middleware for verifying roles on routes. Accepts an optional options object of `{ roles, authorizeAgainst, redirect }`. Returns a middleware `function`
 `isAuthenticated(opts?)` | Helper middleware for checking authentication state. Expects a `req.isAuthenticated()` function to be set. Accepts an optional options object of `{ redirect }`. Returns a middleware `function`
