@@ -1,6 +1,6 @@
 {
   "name": "@danmasta/rbac",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Daniel Smith <dannmasta@gmail.com>",
   "description": "Authorization helper for node apps",
   "license": "MIT",
