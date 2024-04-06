@@ -7,12 +7,14 @@
   "keywords": [
     "rbac",
     "abac",
-    "access control",
+    "access-control",
     "roles",
     "permissions",
     "security",
     "oidc",
-    "oauth"
+    "oauth",
+    "saml",
+    "authorization"
   ],
   "main": "index.js",
   "bin": {},
