@@ -67,7 +67,7 @@ name | type | description
 Name | Description
 -----|------------
 `generatePermissionTree()` | Generate the permission tree for the role. Recursively walks and merges inherited permissions. Returns a permissions `object`
-`isAuthorized(permission)` | Verifies whethere or not the role has a permission: `role.isAuthorized('posts.edit')`. Returns a `boolean`
+`isAuthorized(permission)` | Verifies whether or not the role has a permission: `role.isAuthorized('posts.edit')`. Returns a `boolean`
 
 ### Wildcards
 When describing permissions you can use wildcards `*` to authorize patterns of resources. The syntax looks like:
